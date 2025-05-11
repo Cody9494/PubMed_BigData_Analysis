@@ -1,36 +1,36 @@
 # PubMed_BigData_Analysis
 
-1. PubMedData/parquet (Folder)
+1. PubMedData/parquet (Folder):
 Contains raw data files in Parquet format, directly extracted from PubMed XML files. The Parquet format is used for efficient storage and fast data processing within Apache Spark. These files represent the foundational data for further analysis.
 
-2. SCHEMA_SELECTION.ipynb
+2. SCHEMA_SELECTION.ipynb:
 A Jupyter Notebook dedicated to schema design and selection for the PubMed dataset. It includes defining data structures, handling nested JSON formats, and optimizing the representation of metadata and citation information.
 
-3. Automated_Citation_Retrieval_with_PubMed_E_utilities_API_Final_Version_only_with_abstracts.ipynb
+3. Automated_Citation_Retrieval_with_PubMed_E_utilities_API_Final_Version_only_with_abstracts.ipynb:
 A Jupyter Notebook that automates the retrieval of citation data from PubMed using the E-utilities API. It specifically focuses on fetching citation counts for articles that contain abstracts, enriching the dataset with citation information.
 
-4. EDA.ipynb
+4. EDA.ipynb:
 This Jupyter Notebook performs Exploratory Data Analysis (EDA) on the PubMed dataset. It includes data cleaning, distribution analysis (e.g., publication years, citation counts), keyword frequency analysis, and visualization of data patterns. The primary goal is to explore, clean, and preprocess the data to gain insights and prepare it for advanced analytics. This EDA is foundational for further data enrichment and advanced analytics. By cleaning and structuring the data at this stage, the notebook ensures that downstream tasks are performed on reliable and comprehensive datasets.
 
-5. PUBMED_GENEONTOLOGY.ipynb
+5. PUBMED_GENEONTOLOGY.ipynb:
 This notebook focuses on Gene Ontology (GO) term extraction and classification. It maps biomedical terms from PubMed abstracts to GO categories: Biological Process (BP), Molecular Function (MF), and Cellular Component (CC), enabling semantic classification of articles.
 
-6. LDA.ipynb
+6. LDA.ipynb:
 Implements Latent Dirichlet Allocation (LDA) for topic modeling on the PubMed abstracts. The notebook extracts thematic clusters of biomedical literature, helping identify key topics and areas of research.
 
-7. PUBMED_GRAPHFRAMES.ipynb
+7. PUBMED_GRAPHFRAMES.ipynb:
 Uses GraphFrames in Apache Spark to construct citation and author collaboration networks from the PubMed dataset. Analyzes the connectivity, centrality, and influence of scientific articles through graph-based metrics.
 
-8. PUBMED_Spark_GraphFrames.ipynb
+8. PUBMED_Spark_GraphFrames.ipynb:
 Another notebook leveraging GraphFrames for more advanced graph analytics on PubMed data. It explores citation trees, author collaboration networks, and the propagation of scientific influence across connected publications.
 
-9. high_impact_pmid_journal.parquet
+9. high_impact_pmid_journal.parquet:
 A processed dataset extracted from previous work, containing only PMIDs from high-impact journals. The high-impact threshold was set above 20 to filter significant publications.
 
-10. impact factor journals.xlsx
+10. impact factor journals.xlsx:
 An Excel file containing a list of high-impact biomedical journals with an impact factor threshold of 20 or higher. Used to match and identify high-quality articles within the PubMed dataset.
 
-11. pmid_citations_901.csv
+11. pmid_citations_901.csv:
 A CSV file containing citation data extracted using the PubMed E-utilities API from the notebook Automated_Citation_Retrieval_with_PubMed_E_utilities_API_Final_Version_only_with_abstracts. It includes PMIDs and their respective citation counts.
 
 ![image](https://github.com/user-attachments/assets/e549d46e-12ae-456e-b060-285002ad9b84)
