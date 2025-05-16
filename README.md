@@ -1,4 +1,37 @@
 # PubMed_BigData_Analysis
+This project addresses the challenge of intelligent search and knowledge discovery in biomedical literature using scalable Big Data techniques. With over 36 million PubMed articles, manually identifying influential and relevant papers is infeasible. We utilize Apache Spark, GraphFrames, and text analytics to structure, enrich, and explore scientific articles—focusing on citations, semantic topics, and influence networks—to assist biomedical researchers in finding high-impact, meaningful work.
+
+This project explores the challenge of intelligent information retrieval and knowledge discovery in the biomedical literature domain. With over 36 million publications in PubMed, identifying high-quality, relevant, and influential articles is an overwhelming task for researchers. We address this issue by applying scalable Big Data Analytics techniques, using Apache Spark, GraphFrames, MLlib, and advanced text mining tools to process, enrich, and analyze a large-scale dataset of PubMed articles. Our goal is to enable semantic, citation-aware, and topic-guided exploration of biomedical research, ultimately supporting reproducible, evidence-based scientific work.
+
+The data used in this project originates from PubMed XML files, which we converted into Parquet format for efficient querying. These files are stored in the PubMedData/parquet folder and form the raw data backbone of our analysis pipeline. We selected a subset of ~25,000 articles with abstracts and complete metadata to ensure data consistency throughout our analysis.
+
+The first step was an extensive Exploratory Data Analysis (EDA) using Apache Spark DataFrames, documented in EDA.ipynb. This involved loading and parsing nested XML structures (e.g., MedlineCitation, PubmedData), identifying and handling missing values, filtering articles with abstracts and citations, and performing statistical analyses on publication years, keyword and chemical term frequencies, and citation distribution. This EDA stage was essential to prepare clean and reliable data for all subsequent tasks.
+
+From there, we implemented several Advanced Analyses:
+
+In Automated_Citation_Retrieval_with_PubMed_E_utilities_API.ipynb, we used the PubMed E-utilities API to automatically fetch citation counts for articles in our dataset. The result, stored in pmid_citations_901.csv, helped us evaluate the influence of individual papers and track citation dynamics.
+
+In PUBMED_GRAPHFRAMES.ipynb and PUBMED_Spark_GraphFrames.ipynb, we leveraged GraphFrames to construct a citation network graph, where nodes are articles (PMIDs) and edges represent citation links. We also built an author collaboration graph to visualize research clusters and central contributors. Using PageRank and degree centrality, we identified key publications in the network.
+
+In PUBMED_GENEONTOLOGY.ipynb, we performed semantic classification by mapping keywords and abstract terms to Gene Ontology (GO) categories. This allowed us to label articles with relevant biological contexts—namely Biological Process (BP), Molecular Function (MF), and Cellular Component (CC).
+
+In LDA.ipynb, we conducted topic modeling using Latent Dirichlet Allocation (LDA) to uncover major themes in biomedical literature. The resulting 10-topic model highlighted prominent areas such as inflammation, cancer, neural mechanisms, and genetic expression.
+
+We also included a pre-curated dataset of high-impact PMIDs (high_impact_pmid_journal.parquet), which we created by matching our dataset against a list of high-impact journals (impact factor journals.xlsx) using an impact factor threshold of ≥20. This enabled advanced filtering of top-tier research papers based on publication quality.
+
+
+Summary of Key Results
+Citation Graph: Built a directed citation network with over 12,000 citation edges; top articles identified via PageRank.
+
+Topic Modeling (LDA): Extracted 10 latent topics with biomedical themes including cancer, inflammation, and neural processes.
+
+Gene Ontology Tagging: 72% of articles matched at least one GO term; BP terms most frequent.
+
+High-Impact Filter: Out of ~25K articles, 539 were published in journals with an impact factor of 20 or higher.
+
+
+Project Structure
+Each file in the repository plays a specific role in the pipeline:
 
 1. PubMedData/parquet (Folder):
 Contains raw data files in Parquet format, directly extracted from PubMed XML files. The Parquet format is used for efficient storage and fast data processing within Apache Spark. These files represent the foundational data for further analysis.
