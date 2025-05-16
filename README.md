@@ -25,7 +25,7 @@ Citation Graph: Built a directed citation network with over 12,000 citation edge
 
 Topic Modeling (LDA): Extracted 10 latent topics with biomedical themes including cancer, inflammation, and neural processes.
 
-Gene Ontology Tagging: 72% of articles matched at least one GO term; BP terms most frequent.
+Gene Ontology Tagging: 10969/24919 articles matched at least one GO term (44%)
 
 High-Impact Filter: Out of ~25K articles, 539 were published in journals with an impact factor of 20 or higher.
 
