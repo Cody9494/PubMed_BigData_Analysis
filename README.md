@@ -30,7 +30,7 @@ Gene Ontology Tagging: 72% of articles matched at least one GO term; BP terms mo
 High-Impact Filter: Out of ~25K articles, 539 were published in journals with an impact factor of 20 or higher.
 
 
-Project Structure
+Project Structure:
 Each file in the repository plays a specific role in the pipeline:
 
 1. PubMedData/parquet (Folder):
